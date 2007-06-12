@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Package bayesSurv vignettes</title>
+<!--<meta http-equiv="content-type" content="text/html; charset=iso-8859-2" />-->
+<meta name="description" content="Vignettes for package bayesSurv" />
+<meta name="keywords" content="vignette" />
+<meta name="author" content="Arno&#353t Kom&#225rek" />
+</head>
+
+<body>
+<h1>Package <tt>glmmAK</tt></h1>
+<p>
+This package implements several generalized linear (mixed) models (GLMM) where for random effects either 
+a conventional <b>normal</b> distribution is assumed or a flexible model based on penalized smoothing 
+is used for the random effect distribution. We call the second class of models as <b>penalized Gaussian mixture (PGM)</b>
+or shortly <b>G-spline</b>.<br>
+</p>
+
+<p>
+Models with random effects are estimated in a Bayesian way using the MCMC. The package implements also some models
+without random effects and these can be estimated also using maximum-likelihood.
+Additional information can be found in the references mentioned below and
+at personal webpage of <a href="http://perswww.kuleuven.be/~u0038680"> Arno&#353t Kom&#225rek.</a>
+<br><br>
+This overview provides a sorted list of the functions of the package and links to few more involved examples.
+</p>
+
+
+
+<!-- ======================================================================================================== -->
+<br><p>
+<h1>1. Generalized linear models (GLM)</h1>
+Two functions of the package implements few instances of the GLM and their equivalents can be found also in other (standard) R packages, namely
+
+<ul>
+  <li><a href="../html/cumlogit.html"> <b>cumlogit</b></a> <br>
+     fits 
+     <ul>
+     <li>a logit model for binomial response
+           (see also <a href="../../stats/html/glm.html"> glm</a> from package stats); </li>
+     <li>a cumulative logit model for multinomial response under the assumption of the proportional odds
+           (see also <a href="../../MASS/html/polr.html"> polr</a> from package MASS)
+           and also without assuming proportionality of the odds. </li>
+     </ul>
+  </li>
+  <li><a href="../html/logpoisson.html"> <b>logpoisson</b></a> <br>
+            fits a log-linear model for Poisson response
+           (see also <a href="../../stats/html/glm.html"> glm</a> from package stats).
+  </li>
+</ul>
+</p>
+
+
+<!-- ======================================================================================================== -->
+<br><br><p>
+<h1>2. Generalized linear mixed models (GLMM)</h1>
+The core functions related to the GLMM's with normally distributed random effects and with random effects which distribution is specified in a flexible way
+using the penalized Gaussian mixture (PGM) or shortly G-spline. Methodology has been described in <br>
+<ul>
+<a name="KomarekLesaffreGLMM"></a>
+<li>KOM&#193REK, A. and LESAFFRE, E. (2007).<br>
+<a class="publink" href="http://perswww.kuleuven.be/~u0038680/publication.html#KomarekLesaffreGLMM">
+Generalized linear mixed model with a penalized Gaussian mixture as a random-effects distribution.</a><br>
+<cite>Submitted. <br><!--</cite><b>17</b> (2), 549-569.<br>-->
+</ul>
+
+<br>
+<h3>Main functions from the package related to this methodology</h3>
+<ul>
+  <li><a href="../html/cumlogitRE.html"> <b>cumlogitRE</b></a> <br>
+     implements MCMC sampling for the random effects logit model
+     for binary response and the cumulative logit model for multinomial response.
+  </li>
+  <li><a href="../html/cumlogitRE.predict.html"> <b>cumlogitRE.predict</b></a> <br>
+     implements computation of the posterior predictive
+     category probabilities in models fitted using <tt>cumlogitRE</tt>.
+  </li>
+  <li><a href="../html/logpoissonRE.html"> <b>logpoissonRE</b></a> <br>
+     implements MCMC sampling for the random effects log linear model for Poisson response.
+  </li>
+  <li><a href="../html/logpoissonRE.predict.html"> <b>logpoissonRE.predict</b></a> <br>
+      implements computation of the posterior predictive counts in models fitted using <tt>logpoissonRE</tt>.      
+  <li><a href="../html/summaryGspline1.html"> <b>summaryGspline1</b></a> <br>
+      provides computation of the pointwise posterior summaries
+      (mean, quantiles) of a <b>univariate</b> penalized Gaussian mixture fitted as a random effect distribution
+      using <tt>cumlogitRE</tt> or <tt>logpoissonRE</tt>. In other words, this function provides an estimate of the random
+      effect distribution in PGM GLMM's with univariate random effects (e.g., models with random intercept).
+  </li>
+  <li><a href="../html/summaryGspline2.html"> <b>summaryGspline2</b></a> <br>
+      provides computation of the pointwise posterior summaries
+      (mean, quantiles) of a <b>bivariate</b> penalized Gaussian mixture fitted as a random effect distribution
+      using <tt>cumlogitRE</tt> or <tt>logpoissonRE</tt>. In other words, this function provides an estimate of the random
+      effect distribution in PGM GLMM's with bivariate random effects (e.g., models with random intercept and slope).
+  </li>
+</ul>
+
+<br>
+<h3>Secondary functions from the package related to this methodology</h3>
+<ul>
+  <li><a href="../html/gspline1.html"> <b>rgspline1</b>, <b>dgspline1</b></a> <br>
+
+  </li>
+  <li><a href="../html/gspline2.html"> <b>rgspline2</b></a> <br>
+
+  </li>
+  <li><a href="../html/glmmAK.files2coda.html"> <b>glmmAK.files2coda</b></a> <br>
+
+  </li>
+  <li><a href="../html/maxPosterProb.html"> <b>maxPosterProb</b></a> <br>
+
+  </li>
+  <li><a href="../html/GMRF.html"> <b>momentsGMRF</b>, <b>rGMRF</b>, <b>dGMRF</b>, <b>dGMRF2</b></a> <br>
+</ul>
+
+<br>
+<h3>Examples</h3>
+<ul>
+  <li><a href="ex-Toenail.pdf"><tt><b>ex-Toenail.pdf</b></tt></a> - example 1 using the data set <a href="../html/toenail.html">toenail</a>.
+      Among others, it shows in more detail use of functions 
+      <a href="../html/cumlogitRE.html">cumlogitRE</a>, <a href="../html/summaryGspline1.html">summaryGspline1</a>.
+  <li><a href="ex-Toenail.R"><tt><b>ex-Toenail.R</b></tt></a> - code for the example 1 <br>
+
+  <li><a href="ex-Epileptic.pdf"><tt><b>ex-Epileptic.pdf</b></tt></a> - example 2 using the data set <a href="../html/epilepticBC.html">epilepticBC</a>
+      Among others, it shows in more detail use of functions 
+      <a href="../html/logpoissonRE.html">logpoissonRE</a>, <a href="../html/summaryGspline2.html">summaryGspline2</a>.
+  <li><a href="ex-Epileptic.R"><tt><b>ex-Epileptic.R</b></tt></a> - code for the example 2 <br>
+</ul>
+</p>
+
+
+<!-- ======================================================================================================== -->
+<br><br><p>
+<h1>3. Posterior computation</h1>
+There are few functions in the package for general posterior computation which either supplement 
+the <a href="../../coda/html/00Index.html"> coda</a> package or slightly modify its functions:
+<ul>
+  <li><a href="../html/BPvalue.html"><b>BPvalue</b></a><br>
+  </li>
+  <li><a href="../html/densplotAK.html"><b>densplotAK</b></a><br>
+  </li>
+</ul>
+</p>
+
+
+<!-- ======================================================================================================== -->
+<br><br><p>
+<h1>4. Miscellaneous</h1>
+The package also contains some functions which are either simple utilities or are related to some of my secondary interests
+and were written mainly for testing purposes.
+<ul>
+  <li><a href="../html/scanFH.html"><b>scanFH</b></a><br>
+  </li>
+  <li><a href="../html/QuantileFun.html"><b>QuantileFun</b></a><br>
+  </li>
+  <li><a href="../html/AKmiscel.html"><b>mfLand</b>, <b>mfPort</b></a><br>
+  </li>
+  <li><a href="../html/copula.html"><b>Cgauss</b>, <b>cgauss</b></a><br>
+  </li>
+  <li><a href="../html/copula.html"><b>Cclayton</b>, <b>cclayton</b></a><br>
+  </li>
+  <li><a href="../html/copula.html"><b>Cplackett</b>, <b>cplackett</b></a><br>
+  </li>
+</ul>
+</p>
+
+
+<!-- ======================================================================================================== -->
+<br><br><p>
+<h1>5. Datasets</h1>
+Finally, there are some datasets, mostly taken from the literature, available in the package:
+<ul>
+  <li><a href="../html/toenail.html"> <b>toenail</b></a> </li>
+  <li><a href="../html/epileptic.html"> <b>epileptic</b></a> </li>
+  <li><a href="../html/epilepticBC.html"> <b>epilepticBC</b></a> </li>
+</ul>
+</p>
+
+<br><br><br>
+
+<!-- ======================================================================================================== -->
+
+</body>
+</html>

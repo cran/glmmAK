@@ -170,13 +170,13 @@ cumlogitRE.predict(nobs, v, x, vb, xb, cluster,
   \eqn{\mbox{Kom\'arek, A.}}{Kom&#225rek, A.} and Lesaffre, E. (2007).
   Generalized linear mixed model with a penalized Gaussian mixture as a
   random-effects distribution.
-  \emph{SOME JOURNAL}, \bold{999}, 000--000.
+  \emph{Computational Statistics and Data Analysis (To appear)}, \bold{999}, 000--000.
 }
 \seealso{
   \code{\link{cumlogitRE}}, \code{\link{cumlogit}}, \code{\link{glm}}, \code{\link[MASS]{polr}}.
 }  
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek@med.kuleuven.be}
+  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{komarek@karlin.mff.cuni.cz}
 }  
 \keyword{models}
 

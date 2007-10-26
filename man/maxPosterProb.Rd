@@ -54,7 +54,7 @@ maxPosterProb(data, intercept, std.dev, K, delta, sigma)
   \code{cumlogitRE}, \code{logpoissonRE}.
 }  
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek@med.kuleuven.be}
+  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{komarek@karlin.mff.cuni.cz}
 }  
 \examples{
   N <- 100

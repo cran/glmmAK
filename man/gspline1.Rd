@@ -38,7 +38,7 @@ dgspline1(x, mu, sigma, weight, intcpt=0, scale=1, logw=TRUE)
   Values of the density or generated random numbers.
 }
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek@med.kuleuven.be}
+  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{komarek@karlin.mff.cuni.cz}
 }  
 \examples{
 knots <- c(-2, 0, 2)

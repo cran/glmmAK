@@ -154,13 +154,13 @@ logpoissonRE.predict(nobs, x, xb, offset, cluster,
   \eqn{\mbox{Kom\'arek, A.}}{Kom&#225rek, A.} and Lesaffre, E. (2007).
   Generalized linear mixed model with a penalized Gaussian mixture as a
   random-effects distribution.
-  \emph{SOME JOURNAL}, \bold{999}, 000--000.
+  \emph{Computational Statistics and Data Analysis}, \bold{999}, 000--000.
 }
 \seealso{
   \code{\link{logpoissonRE}}, \code{\link{logpoisson}}, \code{\link{glm}}.
 }  
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek@med.kuleuven.be}
+  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{komarek@karlin.mff.cuni.cz}
 }  
 \keyword{models}
 

@@ -24,9 +24,10 @@ logpoissonRE.predict <- function(nobs, x, xb, offset, cluster,
   by <- 1
   
   thispackage <- "glmmAK"
-  #thispackage <- NULL
+  thispackage <- NULL
 
   ## Design matrices and check of some input arguments
+  y <- rep(0, nobs)  
   DES <- design.logpoisson(y=y, x=x, xb=xb, offset=offset, cluster=cluster, intcpt.random=intcpt.random, hierar.center=hierar.center, predict=TRUE, nobs=nobs)
   if (hierar.center){
     nFixed <- DES$nx

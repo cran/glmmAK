@@ -1,12 +1,12 @@
 Package: glmmAK
-Version: 1.1
-Date: 2007-10-26
+Version: 1.2
+Date: 2008-06-26
 Title: Generalized Linear Mixed Models
-Author: Arnost Komarek <komarek@karlin.mff.cuni.cz>
-Maintainer: Arnost Komarek <komarek@karlin.mff.cuni.cz>
+Author: Arnost Komarek <arnost.komarek@mff.cuni.cz>
+Maintainer: Arnost Komarek <arnost.komarek@mff.cuni.cz>
 Depends: R (>= 2.0.0), smoothSurv, coda, mvtnorm
 Description: Later
-License: GPL version 2 or newer
+License: GPL (>= 2)
 URL: http://www.karlin.mff.cuni.cz/~komarek
 ZipData: no
-Packaged: Fri Oct 26 14:01:38 2007; komari
+Packaged: Thu Jun 26 07:50:40 2008; komarek

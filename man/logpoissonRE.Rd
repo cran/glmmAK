@@ -154,10 +154,10 @@ logpoissonRE(y, x, xb, offset=0, cluster,
   Slice sampling (with Discussion).
   \emph{The Annals of Statistics,} \bold{31}, 705--767.
   
-  \eqn{\mbox{Kom\'arek, A.}}{Kom&#225rek, A.} and Lesaffre, E. (2007).
+  \eqn{\mbox{Kom\'arek, A.}}{Kom&#225rek, A.} and Lesaffre, E. (2008).
   Generalized linear mixed model with a penalized Gaussian mixture as a
   random-effects distribution.
-  \emph{Computational Statistics and Data Analysis (To appear)}, \bold{999}, 000--000.
+  \emph{Computational Statistics and Data Analysis}, \bold{52}, 3441--3458.
   
   Molenberghs, G. and Verbeke, G. (2005).
   \emph{Models for Discrete Longitudinal Data}.
@@ -167,7 +167,7 @@ logpoissonRE(y, x, xb, offset=0, cluster,
   \code{\link{logpoisson}}, \code{\link{cumlogitRE}}, \code{\link{poisson}}, \code{\link{glm}}.
 }  
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{komarek@karlin.mff.cuni.cz}
+  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek[AT]mff.cuni.cz}
 }  
 \examples{
 ### See ex-Epileptic.pdf and ex-Epileptic.R

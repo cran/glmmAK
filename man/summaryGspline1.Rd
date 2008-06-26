@@ -86,7 +86,7 @@ summaryGspline1(x, mu, sigma,
     is a G-spline density evaluated at one MCMC iteration.}
 }
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{komarek@karlin.mff.cuni.cz}
+  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek[AT]mff.cuni.cz}
 }  
 \examples{
 ### See ex-Toenail.pdf, ex-Toenail.R

@@ -16,7 +16,7 @@ help(summaryGspline1, package=glmmAK, htmlhelp=TRUE)
 ### chunk number 3: start
 ###################################################
 library(glmmAK)
-root <- "/home/komari/Rlib/glmmAK/Doc/"
+root <- "/home/komarek/Rlib/glmmAK/Doc/"
 setwd(root)
 data(toenail)
 

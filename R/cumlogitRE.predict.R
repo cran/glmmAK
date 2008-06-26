@@ -27,9 +27,10 @@ cumlogitRE.predict <- function(nobs, v, x, vb, xb, cluster,
   by <- 1
   
   thispackage <- "glmmAK"
-  #thispackage <- NULL
+  thispackage <- NULL
 
   ## Design matrices and check of some input arguments
+  y <- rep(0, nobs)
   DES <- design.cumlogit(y=y, v=v, x=x, vb=vb, xb=xb, cluster=cluster, intcpt.random=intcpt.random, hierar.center=hierar.center, C=C, predict=TRUE, nobs=nobs)
   if (hierar.center){
     nFixed <- DES$nx + C*DES$nv

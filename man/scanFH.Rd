@@ -52,7 +52,7 @@ scanFH(file, quiet=FALSE)
   \code{\link{scan}}
 }
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{komarek@karlin.mff.cuni.cz}
+  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek[AT]mff.cuni.cz}
 }  
 \examples{
 cat("x y z", "1 2 3", "1 4 6", "10 20 30", file="ex.data", sep="\n")

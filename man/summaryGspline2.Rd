@@ -139,7 +139,7 @@ summaryGspline2(x1, x2, mu1, mu2, sigma1, sigma2,
     is the second marginal G-spline density evaluated at one MCMC iteration.}
 }
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{komarek@karlin.mff.cuni.cz}
+  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek[AT]mff.cuni.cz}
 }  
 \examples{
 ### See ex-Toenail.pdf, ex-Toenail.R

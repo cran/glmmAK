@@ -27,7 +27,7 @@ QuantileFun(x, probs=seq(0, 1, 0.25), vals.in.cols=TRUE)
   \code{\link[stats]{quantile}}.
 }  
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{komarek@karlin.mff.cuni.cz}
+  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek[AT]mff.cuni.cz}
 }  
 \examples{
 probs <- c(0, 0.25, 0.354, 0.5, 0.75, 1)

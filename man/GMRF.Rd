@@ -54,13 +54,13 @@ Some objects.
 }
 \section{Value for momentsGMRF}{
   A list with the components:
-  \description{
+  \describe{
     \item{mean}{mean of the (constrained) GMRF}
     \item{Sigma}{covariance matrix of the (constrained) GMRF}
   }
   
   and the following attributes:
-  \description{
+  \describe{
     \item{mean.unconstr}{mean of the GMRF before imposing the constraints}
     \item{Sigma.unconstr}{covariance matrix \eqn{\Sigma_u}{Sigma[u]} of the GMRF before imposing
       the constraints}
@@ -72,7 +72,7 @@ Some objects.
 }
 \section{Value for rGMRF}{
   A list with the components:
-  \description{
+  \describe{
     \item{x}{vector or matrix with sampled values}
     \item{log.dens}{vector with the values of the log-density evaluated
       in the sampled values}

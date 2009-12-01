@@ -393,7 +393,7 @@ fit.cumlogit <- function(y, v, x, C=1, logit.order=c("decreasing", "increasing")
                niter=as.integer(maxit),          toler=as.double(epsilon), trace=as.integer(trace),
                err=integer(1), PACKAGE=thispackage
             )
-
+  
   FIT$I.obs <- matrix(FIT$I.obs, nrow=nregr, ncol=nregr)
   FIT$I.exp <- matrix(FIT$I.exp, nrow=nregr, ncol=nregr)
   if (FIT$err){
@@ -423,6 +423,7 @@ fit.cumlogit <- function(y, v, x, C=1, logit.order=c("decreasing", "increasing")
   names(FIT$betaGamma) <- names(FIT$U) <- names(betaGamma)
   colnames(FIT$I.obs) <- rownames(FIT$I.obs) <- colnames(FIT$I.exp) <- rownames(FIT$I.exp)<- names(betaGamma)
 
+  
   ### NULL MODEL (intercepts only)
   v.NULL <- matrix(rep(1, n), ncol=1)
   colnames(v.NULL) <- "(Intercept)"  
@@ -448,8 +449,8 @@ fit.cumlogit <- function(y, v, x, C=1, logit.order=c("decreasing", "increasing")
               vcov=FIT$I.obs,
               expect.vcov=FIT$I.exp,
               logit.order=logit.order,
-              linear.predictors=linear.predictors00.cumlogit(FIT$betaGamma, x, v, C, logit.order=logit.order),
-              fitted.values=prob00.cumlogit(FIT$betaGamma, x, v, C, logit.order=logit.order),
+              linear.predictors=linear.predictors00.cumlogit(coef=FIT$betaGamma, v=v, x=x, C=C, logit.order=logit.order),
+              fitted.values=prob00.cumlogit(FIT$betaGamma, v=v, x=x, C=C, logit.order=logit.order),
               converged=(FIT$err==0),
               iter=FIT$niter,
               C=C,

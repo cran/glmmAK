@@ -3,10 +3,11 @@
 ##     AUTHOR:  Arnost Komarek (my name in TeX: Arno\v{s}t Kom\'arek)
 ##              akom@email.cz
 ##
-##           CREATED:  07/08/2006
-##   WORKING VERSION:  16/08/2006
-## MAJOR MOIFICATION:  11/10/2006
-##                     (internally, regression coefficients are stored in the order 'v' covariates first, 'x' covariates then)
+##           CREATED:   07/08/2006
+##   WORKING VERSION:   16/08/2006
+## MAJOR MODIFICATION:  11/10/2006
+##                      (internally, regression coefficients are stored in the order 'v' covariates first, 'x' covariates then)
+##                      01/12/2009  bug in the print method fixed
 ##
 ## PURPOSE: Cumulative logit model
 ##
@@ -103,7 +104,7 @@ print.cumlogit <- function(x, vcov=c("observed", "expected"), ...)
       PRINT <- coef.table[x$C*nv + (1:nx),]      
     }
     else{
-      PRINT <- matrix(coef.table[1,], nrow=1)
+      PRINT <- matrix(coef.table[x$C*nv + 1,], nrow=1)
       colnames(PRINT) <- colnames(coef.table)
       rownames(PRINT) <- rownames(coef.table)[1]      
     }  

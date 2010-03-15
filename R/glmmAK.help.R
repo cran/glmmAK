@@ -684,6 +684,7 @@ init.gspline.glmmAK <- function(init.gspline, prior.gspline, init.random, nRando
     Lambda <- init.gspline$lambda
     names(Lambda) <- paste("lambda", 1:nRandom, sep="")
 
+    
     ### weights and a coefficients ###
     aaa <- list()
     www <- list()
@@ -756,7 +757,8 @@ init.gspline.glmmAK <- function(init.gspline, prior.gspline, init.random, nRando
       }  
     }
     lambda.a <- c(Lambda, init.gspline$acoef)
-
+    
+    
     ### allocations ###
     tmp <- match("alloc", ininit, nomatch=NA)
     if (is.na(tmp)){
@@ -764,7 +766,7 @@ init.gspline.glmmAK <- function(init.gspline, prior.gspline, init.random, nRando
       else{
         if (length(init.random$var) != nRandom) stop(paste("init.random$var should be a vector of length ", nRandom, " at this stage", sep=""))
         Std.Dev <- sqrt(init.random$var)
-      }  
+      }
       init.gspline$alloc <- maxPosterProb(data=init.random$b, intercept=init.random$mean, std.dev=Std.Dev,
                                           K=prior.gspline$K, delta=prior.gspline$delta, sigma=prior.gspline$sigma)
     }
@@ -811,6 +813,8 @@ headers.glmmAK <- function(dir, store, DES, prob.init, init.fixedML, init.Mrando
   }  
   name.cluster <- names(table(DES$cluster))
 
+  files.in.dir <- dir(dir)
+  
   ### Index of the iteration (iteration.sim) ###
   sink(paste(dir, "/iteration.sim", sep = ""), append = FALSE)
   cat("iteration", "\n")
@@ -823,7 +827,7 @@ headers.glmmAK <- function(dir, store, DES, prob.init, init.fixedML, init.Mrando
     sink()
   }
   else{
-    file.remove(paste(dir, "/betaF.sim", sep = ""))
+    if ("betaF.sim" %in% files.in.dir) file.remove(paste(dir, "/betaF.sim", sep = ""))
   }  
   
   ### Log-likelihood (loglik.sim) ###
@@ -844,7 +848,7 @@ headers.glmmAK <- function(dir, store, DES, prob.init, init.fixedML, init.Mrando
     ### Category probabilities (probability.sim) ###
     tmp <- match("prob", instore, nomatch=NA)
     if (is.na(tmp)){
-      file.remove(paste(dir, "/probability.sim", sep = ""))
+      if ("probability.sim" %in% files.in.dir) file.remove(paste(dir, "/probability.sim", sep = ""))
     }
     else{
       if (store$prob){
@@ -852,7 +856,7 @@ headers.glmmAK <- function(dir, store, DES, prob.init, init.fixedML, init.Mrando
         cat(paste(colnames(prob.init), ":", rep(1:DES$ny, each=DES$C+1), sep=""), "\n", sep="   ")
         sink()
       }else{
-        file.remove(paste(dir, "/probability.sim", sep = ""))
+        if ("probability.sim" %in% files.in.dir) file.remove(paste(dir, "/probability.sim", sep = ""))
       }  
     }      
   }else{
@@ -860,7 +864,7 @@ headers.glmmAK <- function(dir, store, DES, prob.init, init.fixedML, init.Mrando
       ### Expected counts (probability.sim) ###
       tmp <- match("ecount", instore, nomatch=NA)
       if (is.na(tmp)){
-        file.remove(paste(dir, "/expectcount.sim", sep = ""))
+        if ("expectcount.sim" %in% files.in.dir) file.remove(paste(dir, "/expectcount.sim", sep = ""))
       }
       else{
         if (store$ecount){
@@ -868,7 +872,7 @@ headers.glmmAK <- function(dir, store, DES, prob.init, init.fixedML, init.Mrando
           cat(paste("ecount", 1:DES$ny, sep=""), "\n", sep="   ")
           sink()
         }else{
-          file.remove(paste(dir, "/expectcount.sim", sep = ""))
+          if ("expectcount.sim" %in% files.in.dir) file.remove(paste(dir, "/expectcount.sim", sep = ""))
         }  
       }        
     }else{
@@ -885,7 +889,7 @@ headers.glmmAK <- function(dir, store, DES, prob.init, init.fixedML, init.Mrando
       sink()
     }
     else{
-      file.remove(paste(dir, "/betaR.sim", sep = ""))
+      if ("betaR.sim" %in% files.in.dir) file.remove(paste(dir, "/betaR.sim", sep = ""))
     }  
 
     ### Covariance matrix of random effects and its inverse (varR.sim) ###
@@ -906,7 +910,7 @@ headers.glmmAK <- function(dir, store, DES, prob.init, init.fixedML, init.Mrando
     ### Values of random effects ###
     tmp <- match("b", instore, nomatch=NA)
     if (is.na(tmp)){
-#      file.remove(paste(dir, "/b.sim", sep = ""))    ### We will store b's anyway but not at each iteration
+#     if ("b.sim" %in% files.in.dir) file.remove(paste(dir, "/b.sim", sep = ""))    ### We will store b's anyway but not at each iteration
       sink(paste(dir, "/b.sim", sep = ""), append = FALSE)
       cat(paste(rep(names(init.MrandomML), DES$N), ":", rep(name.cluster, each=nRandom), sep=""), "\n", sep="   ")            
       sink()            
@@ -918,9 +922,9 @@ headers.glmmAK <- function(dir, store, DES, prob.init, init.fixedML, init.Mrando
     }  
   }
   else{
-    file.remove(paste(dir, "/betaR.sim", sep = ""))
-    file.remove(paste(dir, "/varR.sim", sep = ""))
-    file.remove(paste(dir, "/b.sim", sep = ""))    
+    if ("betaR.sim" %in% files.in.dir) file.remove(paste(dir, "/betaR.sim", sep = ""))
+    if ("varR.sim" %in% files.in.dir)  file.remove(paste(dir, "/varR.sim", sep = ""))
+    if ("b.sim" %in% files.in.dir)     file.remove(paste(dir, "/b.sim", sep = ""))    
   }  
 
   if (drandom == "gspline"){
@@ -940,8 +944,8 @@ headers.glmmAK <- function(dir, store, DES, prob.init, init.fixedML, init.Mrando
     if (nRandom == 1){
       nlogweight <- paste("a", ".", (-prior.gspline$K[1]):prior.gspline$K[1], sep="")
 
-      file.remove(paste(dir, "/weight.sim", sep = ""))
-      file.remove(paste(dir, "/knotInd.sim", sep = ""))              
+      if ("weight.sim" %in% files.in.dir)  file.remove(paste(dir, "/weight.sim", sep = ""))
+      if ("knotInd.sim" %in% files.in.dir) file.remove(paste(dir, "/knotInd.sim", sep = ""))              
     }
     else{
       if (nRandom == 2){
@@ -1003,7 +1007,7 @@ headers.glmmAK <- function(dir, store, DES, prob.init, init.fixedML, init.Mrando
     ### Allocations (alloc.sim) ###
     tmp <- match("alloc", instore, nomatch=NA)
     if (is.na(tmp)){
-#      file.remove(paste(dir, "/alloc.sim", sep = ""))    ### We will store alloc's anyway but not at each iteration
+#     if ("alloc.sim" %in% files.in.dir) file.remove(paste(dir, "/alloc.sim", sep = ""))    ### We will store alloc's anyway but not at each iteration
       if (nRandom == 1){
         sink(paste(dir, "/alloc.sim", sep = ""), append = FALSE)
         #cat(paste(rep(names(init.MrandomML), DES$N), ":", rep(name.cluster, each=nRandom), sep=""), "\n", sep="   ")
@@ -1043,16 +1047,16 @@ headers.glmmAK <- function(dir, store, DES, prob.init, init.fixedML, init.Mrando
     sink()    
   }
   else{
-    file.remove(paste(dir, "/gspline.sim", sep = ""))
-    file.remove(paste(dir, "/logweight.sim", sep = ""))
-    file.remove(paste(dir, "/alloc.sim", sep = ""))
-    file.remove(paste(dir, "/gmoment.sim", sep = ""))
+    if ("gspline.sim" %in% files.in.dir)   file.remove(paste(dir, "/gspline.sim", sep = ""))
+    if ("logweight.sim" %in% files.in.dir) file.remove(paste(dir, "/logweight.sim", sep = ""))
+    if ("alloc.sim" %in% files.in.dir)     file.remove(paste(dir, "/alloc.sim", sep = ""))
+    if ("gmoment.sim" %in% files.in.dir)   file.remove(paste(dir, "/gmoment.sim", sep = ""))
 
-    file.remove(paste(dir, "/weight.sim", sep = ""))
-    file.remove(paste(dir, "/knotInd.sim", sep = ""))
+    if ("weight.sim" %in% files.in.dir)  file.remove(paste(dir, "/weight.sim", sep = ""))
+    if ("knotInd.sim" %in% files.in.dir) file.remove(paste(dir, "/knotInd.sim", sep = ""))
 
-    file.remove(paste(dir, "/betaRadj.sim", sep = ""))
-    file.remove(paste(dir, "/varRadj.sim", sep = ""))        
+    if ("betaRadj.sim" %in% files.in.dir) file.remove(paste(dir, "/betaRadj.sim", sep = ""))
+    if ("varRadj.sim" %in% files.in.dir)  file.remove(paste(dir, "/varRadj.sim", sep = ""))        
   }    
   
   return(invisible(dir))    

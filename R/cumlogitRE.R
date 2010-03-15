@@ -77,6 +77,7 @@ cumlogitRE <- function(y, v, x, vb, xb, cluster,
     drandom <- "none"
     drandomI <- 0
   }  
+
   
   ## Prior for random effects
   prior.random <- prior.random.glmmAK(prior.random=prior.random, nRandom=nRandom, drandom=drandom, hierar.center=hierar.center)
@@ -118,6 +119,7 @@ cumlogitRE <- function(y, v, x, vb, xb, cluster,
     }  
     init.DrandomML <- fit.init$expect.vcov[DES$ind.logit1, DES$ind.logit1]  ## take only block corresponding to the first logit
   }  
+
   
   ## Initial values for fixed effects
   init.fixed <- init.fixed.glmmAK(init.fixed=init.fixed, init.fixedML=init.fixedML, nFixed=nFixed)
@@ -129,9 +131,10 @@ cumlogitRE <- function(y, v, x, vb, xb, cluster,
 
   ## Initial values for G-spline parameters
   init.gspline <- init.gspline.glmmAK(init.gspline=init.gspline, prior.gspline=prior.gspline,
-                                       init.random=init.random, nRandom=nRandom, drandom=drandom)
+                                      init.random=init.random, nRandom=nRandom, drandom=drandom)
   InitLambda.a <- attr(init.gspline, "lambda.a")
-    
+
+  
   ## Write headers to files
   headers.glmmAK(dir=dir, store=store, DES=DES, prob.init=prob.init, init.fixedML=init.fixedML, init.MrandomML=init.MrandomML, hierar.center=hierar.center,
                   drandom=drandom, model="cumlogit", prior.gspline=prior.gspline)

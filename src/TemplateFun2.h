@@ -19,9 +19,9 @@ writeToFile_1(const dd* array,      const int& nC,        std::ofstream& ofile,
 
 template <typename dd>
 void
-writeToFile_1(const dd* array1,   const int& nC1,
-              const dd* array2,   const int& nC2,         std::ofstream& ofile,
-              const int& prec=6,  const int& width=1);
+writeToFile2_1(const dd* array1,   const int& nC1,
+               const dd* array2,   const int& nC2,         std::ofstream& ofile,
+               const int& prec=6,  const int& width=1);
 
 template <typename dd>
 void

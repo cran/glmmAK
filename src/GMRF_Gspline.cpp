@@ -176,7 +176,7 @@ update(int *accept,               double *a,                    double *lambda,
       GMRF::rscale(flambda, par_rscale);
       *prop_lambda = *flambda * (*lambda);
 
-      log_A = (par_lambda[0] + 0.5*(na_order+1)) * (log_AK(*prop_lambda) - log_AK(*lambda));
+      log_A = (par_lambda[0] + 0.5*(na_order+1)) * (log_AK(prop_lambda[0]) - log_AK(*lambda));
       log_A += -par_lambda[1] * (*prop_lambda - (*lambda));
     }
     else{

@@ -35,19 +35,19 @@ maxPosterProb <- function(data, intercept, std.dev, K, delta, sigma)
 
   if (length(std.dev) == 1) std.dev <- rep(std.dev, Dim)  
   if (length(std.dev) != Dim) stop("Incorrect std.dev supplied")
-  if (any(std.dev) <= 0) stop("std.dev must be all positive")
+  if (any(std.dev <= 0)) stop("std.dev must be all positive")
 
   if (length(K) == 1) K <- rep(K, Dim)
   if (length(K) != Dim) stop("Incorrect K supplied")  
-  if (any(K) < 0) stop("K must be all non-negative")
+  if (any(K < 0)) stop("K must be all non-negative")
 
   if (length(delta) == 1) delta <- rep(delta, Dim)
   if (length(delta) != Dim) stop("Incorrect delta supplied")  
-  if (any(delta) <= 0) stop("K must be all positive")
+  if (any(delta <= 0)) stop("K must be all positive")
   
   if (length(sigma) == 1) sigma <- rep(sigma, Dim)  
   if (length(sigma) != Dim) stop("Incorrect sigma supplied")  
-  if (any(sigma) <= 0) stop("sigma must be all positive")
+  if (any(sigma <= 0)) stop("sigma must be all positive")
   
   knots <- numeric()
   for (i in 1:Dim){

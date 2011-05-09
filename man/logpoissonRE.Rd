@@ -6,8 +6,7 @@
 }
 \description{
   This function implements MCMC sampling for the Poisson log-linear model.
-  Details are given in \eqn{\mbox{Kom\'arek}}{Kom&#225rek} and
-  Lesaffre (2007). On as many places as possible, the same notation as
+  Details are given in Komárek and Lesaffre (2008). On as many places as possible, the same notation as
   in this paper is used also in this manual page.
 
   In general, the following log-linear model for response \eqn{Y} is assumed:
@@ -154,7 +153,7 @@ logpoissonRE(y, x, xb, offset=0, cluster,
   Slice sampling (with Discussion).
   \emph{The Annals of Statistics,} \bold{31}, 705--767.
   
-  \eqn{\mbox{Kom\'arek, A.}}{Kom&#225rek, A.} and Lesaffre, E. (2008).
+  Komárek, A. and Lesaffre, E. (2008).
   Generalized linear mixed model with a penalized Gaussian mixture as a
   random-effects distribution.
   \emph{Computational Statistics and Data Analysis}, \bold{52}, 3441--3458.
@@ -167,7 +166,7 @@ logpoissonRE(y, x, xb, offset=0, cluster,
   \code{\link{logpoisson}}, \code{\link{cumlogitRE}}, \code{\link{poisson}}, \code{\link{glm}}.
 }  
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek[AT]mff.cuni.cz}
+  Arnošt Komárek \email{arnost.komarek[AT]mff.cuni.cz}
 }  
 \examples{
 ### See ex-Epileptic.pdf and ex-Epileptic.R

@@ -37,7 +37,7 @@ BPvalue(sample)
   \emph{Journal of Computational and Graphical Statistics,} \bold{13}, 20 - 35.
 }
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek[AT]mff.cuni.cz}
+  Arnošt Komárek \email{arnost.komarek[AT]mff.cuni.cz}
 }  
 \examples{
 m <- 1000

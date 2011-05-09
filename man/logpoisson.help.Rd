@@ -35,6 +35,6 @@ fit.logpoisson(y, x, offset, epsilon=1e-08, maxit=25, trace=FALSE)
   \code{\link{logpoisson}}, \code{\link{logpoissonRE}}.
 }  
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek[AT]mff.cuni.cz}
+  Arnošt Komárek \email{arnost.komarek[AT]mff.cuni.cz}
 }
 \keyword{internal}

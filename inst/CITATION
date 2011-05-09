@@ -1,0 +1,19 @@
+citHeader("To cite package 'glmmAK' in publications, please, use the following article:")
+     
+desc <- packageDescription("glmmAK")
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", desc$Date)
+vers <- paste("R package version", desc$Version)
+
+citEntry(entry   = "Article",
+         title   = "Generalized linear mixed model with a penalized Gaussian mixture as a random-effects distribution",
+         author  = "Arno\\v{s}t Kom\\'arek, Emmanuel Lesaffre",
+         journal = "Computational Statistics and Data Analysis",
+         year    = "2008",
+         volume  = "52",
+         number  = "7",
+         pages   = "3441-3458",
+         doi     = "10.1016/j.csda.2007.10.024",
+         textVersion = "Komarek, A. and Lesaffre, E. (2008). 
+                        Generalized linear mixed model with a penalized Gaussian mixture as a random-effects distribution.
+                        Computational Statistics and Data Analysis, 52(7), 3441-3458. doi: 10.1016/j.csda.2007.10.024.")
+

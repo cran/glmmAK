@@ -6,8 +6,8 @@
 \description{
   This function implements MCMC sampling for the logit model with binary
   response and the cumulative logit model for multinomial ordinal
-  response. Details are given in \eqn{\mbox{Kom\'arek}}{Kom&#225rek} and
-  Lesaffre (2007). On as many places as possible, the same notation as
+  response. Details are given in Komárek and Lesaffre (2008). 
+  On as many places as possible, the same notation as
   in this paper is used also in this manual page.
 
   In general, the following (cumulative) logit model for response \eqn{Y}
@@ -94,7 +94,7 @@
     See \code{\link{gspline1}} and \code{\link{gspline2}} for
     description of the G-spline (penalized Gaussian mixture)
     distribution.
-    Further, see \eqn{\mbox{Kom\'arek}}{Kom&#225rek} and Lesaffre (2007)
+    Further, see Komárek and Lesaffre (2008)
     for description of the prior distribution on the G-spline. Brief
     description follows here as well.
 
@@ -433,8 +433,7 @@ cumlogitRE(y, v, x, vb, xb, cluster,
         \dQuote{\code{uniCAR}}\eqn{\mbox{\hspace{\textwidth}}}{\cr}
             univariate (in each margin) conditional
 	    autoregression as described in
-	    \eqn{\mbox{Kom\'arek}}{Kom&#225rek} and Lesaffre
-	    (2007). That is a priori
+	    Komárek and Lesaffre (2008). That is a priori
 	    \deqn{
             p(a\,|\,\lambda) \propto
             \exp\Biggl[
@@ -860,14 +859,14 @@ cumlogitRE(y, v, x, vb, xb, cluster,
 	gmean=sum[j=-K]^K w[j]*(mu[j]-gmean)^2 + sigma^2.}
       
       See
-      \eqn{\mbox{Kom\'arek, A.}}{Kom&#225rek, A.} and Lesaffre, E. (2007)
+      Komárek and Lesaffre, E. (2008)
       for formulas that apply in the \bold{bivariate} case.
 
       Values stored here are the values of
       \eqn{\beta_1^*,\ldots,\beta_q^*}{beta[1]^*,\ldots,beta[q]^*}
       and \eqn{d_{1,1}^*, d_{2,1}^*,\ldots,d_{q,q}^*}{%
                d[1,1]^*, d[2,1]^*, \ldots, d[q,q]^*}
-      as defined in \eqn{\mbox{Kom\'arek}}{Kom&#225rek} and Lesaffre (2007).      
+      as defined in Komárek and Lesaffre (2008).      
     }
     \item{betaRadj.sim}{sampled values of the average (overall) effects
       of the random effects. See notes under the files \file{betaF.sim}
@@ -875,7 +874,7 @@ cumlogitRE(y, v, x, vb, xb, cluster,
 
       Values stored here are the values of
       \eqn{\gamma_1,\ldots,\gamma_q}{gamma[1],\ldots,gamma[q]}
-      as defined in \eqn{\mbox{Kom\'arek}}{Kom&#225rek} and Lesaffre (2007).      
+      as defined in Komárek and Lesaffre (2008).      
     }      
     \item{varRadj.sim}{sampled components of the variance-covariance
       matrix of the random-effects.
@@ -883,10 +882,10 @@ cumlogitRE(y, v, x, vb, xb, cluster,
       Values stored here are the values of
       \eqn{d_{1,1}, d_{2,1},\ldots,d_{q,q}}{%
            d[1,1], d[2,1], \ldots, d[q,q]}
-      as defined in \eqn{\mbox{Kom\'arek}}{Kom&#225rek} and Lesaffre (2007).      
+      as defined in Komárek and Lesaffre (2008).      
     }      
     \item{alloc.sim}{sampled values of the component allocations
-      (in \eqn{\mbox{Kom\'arek}}{Kom&#225rek} and Lesaffre (2007)
+      (in Komárek and Lesaffre (2008)
       denoted by \eqn{r_i}{r[i]}) for individual random effects.
 
       For \bold{univariate} G-spline, the allocations are stored on the
@@ -922,7 +921,7 @@ cumlogitRE(y, v, x, vb, xb, cluster,
   Slice sampling (with Discussion).
   \emph{The Annals of Statistics,} \bold{31}, 705--767.
   
-  \eqn{\mbox{Kom\'arek, A.}}{Kom&#225rek, A.} and Lesaffre, E. (2008).
+  Komárek, A. and Lesaffre, E. (2008).
   Generalized linear mixed model with a penalized Gaussian mixture as a
   random-effects distribution.
   \emph{Computational Statistics and Data Analysis}, \bold{52}, 3441--3458.
@@ -935,7 +934,7 @@ cumlogitRE(y, v, x, vb, xb, cluster,
   \code{\link{cumlogit}}, \code{\link{logpoissonRE}}, \code{\link{glm}}, \code{\link[MASS]{polr}}.
 }  
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek[AT]mff.cuni.cz}
+  Arnošt Komárek \email{arnost.komarek[AT]mff.cuni.cz}
 }  
 \examples{
 ### See ex-Toenail.pdf and ex-Toenail.R

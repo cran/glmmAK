@@ -74,7 +74,7 @@ rgspline2(n, mu1, mu2, sigma1, sigma2, weight, knotInd,
   Values of the density or generated random numbers.
 }
 \author{
-  \eqn{\mbox{Arno\v{s}t Kom\'arek}}{Arno&#353t Kom&#225rek} \email{arnost.komarek[AT]mff.cuni.cz}
+  Arnošt Komárek \email{arnost.komarek[AT]mff.cuni.cz}
 }  
 \examples{
 knots1 <- c(-2, 0, 2)

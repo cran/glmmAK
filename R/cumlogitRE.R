@@ -1,7 +1,7 @@
 #*** cumlogitRE.R ***/
 ##
 ##     AUTHOR:  Arnost Komarek (my name in TeX: Arno\v{s}t Kom\'arek)
-##              akom@email.cz
+##              arnost.komarek[AT]mff.cuni.cz
 ##
 ##           CREATED:  11/09/2006
 ##   WORKING VERSION:  03/10/2006  (normal random effects)

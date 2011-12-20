@@ -1,0 +1,46 @@
+# Load dynamic library
+useDynLib(glmmAK)
+
+
+# Export all names
+export("mfLand", "mfPort")
+export("BPvalue")
+export("momentsGMRF", "rGMRF", "dGMRF", "dGMRF2")
+export("QuantileFun")
+export("Cplackett", "Cgauss", "Cclayton", "cplackett", "cgauss", "cclayton")
+export("densplotAK")
+export("glmmAK.files2coda")
+export("checknsimul.glmmAK", "prior.fixed.glmmAK", "init.fixed.glmmAK", "prior.random.glmmAK", "init.random.glmmAK", "prior.gspline.glmmAK", "init.gspline.glmmAK", "headers.glmmAK")
+export("rgspline1", "dgspline1")
+export("rgspline2")
+export("maxPosterProb")
+export("scanFH")
+export("summaryGspline1")
+export("summaryGspline2")
+
+export("cumlogit")
+exportClasses("cumlogit")
+export("design.cumlogit", "fit.cumlogit", "init00.cumlogit", "linear.predictors00.cumlogit", "prob00.cumlogit")
+S3method(print, "cumlogit")
+S3method(summary, "cumlogit")
+
+export("logpoisson")
+exportClasses("logpoisson")
+export("design.logpoisson", "fit.logpoisson")
+S3method(print, "logpoisson")
+S3method(summary, "logpoisson")
+
+export("cumlogitRE")
+export("cumlogitRE.predict")
+
+export("logpoissonRE")
+export("logpoissonRE.predict")
+
+
+# Import all packages listed as Imports or Depends
+import(
+  smoothSurv,
+  coda,
+  mvtnorm
+)
+

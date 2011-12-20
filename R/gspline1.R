@@ -1,7 +1,7 @@
 #*** gspline1.R ***/
 ##
 ##     AUTHOR:  Arnost Komarek (my name in TeX: Arno\v{s}t Kom\'arek)
-##              akom@email.cz
+##              arnost.komarek[AT]mff.cuni.cz
 ##
 ##         CREATED:  22/01/2007
 ##

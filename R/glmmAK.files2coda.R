@@ -1,7 +1,7 @@
 #*** glmmAK.files2coda.R ***/
 ##
 ##     AUTHOR:  Arnost Komarek (my name in TeX: Arno\v{s}t Kom\'arek)
-##              akom@email.cz
+##              arnost.komarek[AT]mff.cuni.cz
 ##
 ##         CREATED:  02/11/2006 as cumlogitRE.files2coda
 ##                   15/02/2007 renamed to glmmAK.files2coda

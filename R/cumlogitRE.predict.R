@@ -1,7 +1,7 @@
 #*** cumlogitRE.predict.R ***/
 ##
 ##     AUTHOR:  Arnost Komarek (my name in TeX: Arno\v{s}t Kom\'arek)
-##              akom@email.cz
+##              arnost.komarek[AT]mff.cuni.cz
 ##
 ##                   CREATED:  29/01/2007
 ##           WORKING VERSION:  31/01/2007

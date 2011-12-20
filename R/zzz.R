@@ -1,15 +1,28 @@
 #*** zzz.R ***/
 ##
 ##     AUTHOR:  Arnost Komarek (my name in TeX: Arno\v{s}t Kom\'arek)
-##              akom@email.cz
+##              arnost.komarek[AT]mff.cuni.cz
 ##
 #* ********************************************************************************* */
 
-.First.lib <- function(lib, pkg)
+.onAttach <- function(libname, pkgname)
+#.First.lib <- function(libname, pkgname)
 {
-#   require(coda)
-   library.dynam("glmmAK", pkg, lib)
+   library.dynam("glmmAK", pkgname, libname)
 
+   packageStartupMessage(paste(
+       "\n",
+       "### Generalized Linear Mixed Models\n",
+       "### Arnost Komarek\n\n",
+       "### See citation(\"glmmAK\") or toBibtex(citation(\"glmmAK\")) for the best way to cite\n",
+       "### the package if you find it useful.\n\n", sep=""))
+   #cat("\n")
+   #cat("### Generalized Linear Mixed Models\n")
+   #cat("### Arnost Komarek\n\n")
+   #cat("### See citation(\"glmmAK\") or toBibtex(citation(\"glmmAK\")) for the best way to cite\n")
+   #cat("### the package if you find it useful.\n\n")
+   
    invisible()
 }
+
 

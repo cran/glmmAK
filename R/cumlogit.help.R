@@ -1,7 +1,7 @@
 #*** cumlogit.help.R ***/
 ##
 ##     AUTHOR:  Arnost Komarek (my name in TeX: Arno\v{s}t Kom\'arek)
-##              akom@email.cz
+##              arnost.komarek[AT]mff.cuni.cz
 ##
 ##         CREATED:  25/09/2006
 ##
